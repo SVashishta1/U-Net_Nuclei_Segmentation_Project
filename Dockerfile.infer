@@ -1,0 +1,61 @@
+# Use the ARM64-compatible TensorFlow & PyTorch image
+#FROM sonoisa/deep-learning-coding:pytorch1.12.0_tensorflow2.9.1
+
+# Set working directory
+#WORKDIR /app
+
+# Switch to root for package installation and symlink creation
+#USER root
+
+# Disable Kitware repo in sources.list, remove Kitware files, update, install tools, import key, then install pigz
+#RUN sed -i '/kitware/d' /etc/apt/sources.list && \
+ #   rm -f /etc/apt/sources.list.d/kitware* && \
+  #  apt-get update && \
+   # apt-get install -y gnupg dirmngr && \
+  #  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16FAAD7AF99A65E2 && \
+  #  apt-get update && \
+  #  apt-get install -y pigz && \
+  #  ln -sf /bin/gzip /usr/bin/unpigz
+
+# Copy necessary files
+#COPY unet_model.h5 /app/
+#COPY infer_unet.py /app/
+#COPY test_image.png /app/
+
+# Install additional Python dependencies
+#RUN pip install opencv-python matplotlib
+
+# Run the inference script
+#CMD ["python3", "infer_unet.py"]
+
+#####################################################################
+
+# Use the ARM64-compatible TensorFlow & PyTorch image
+FROM sonoisa/deep-learning-coding:pytorch1.12.0_tensorflow2.9.1
+
+# Set working directory
+WORKDIR /app
+
+# Switch to root for package installation and symlink creation
+USER root
+
+# Disable Kitware repo in sources.list, remove Kitware files, update, install tools, import key, then install pigz
+RUN sed -i '/kitware/d' /etc/apt/sources.list && \
+    rm -f /etc/apt/sources.list.d/kitware* && \
+    apt-get update && \
+    apt-get install -y gnupg dirmngr && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16FAAD7AF99A65E2 && \
+    apt-get update && \
+    apt-get install -y pigz && \
+    ln -sf /bin/gzip /usr/bin/unpigz
+
+# Copy necessary files
+COPY unet_model.h5 /app/
+COPY infer_unet.py /app/
+COPY test_image.png /app/
+
+# Install additional Python dependencies (use opencv-python-headless instead of opencv-python)
+RUN pip install opencv-python-headless matplotlib
+
+# Run the inference script
+CMD ["python3", "infer_unet.py"]
