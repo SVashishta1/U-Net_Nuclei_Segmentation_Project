@@ -32,9 +32,7 @@ This project uses a pre-trained U-Net model (saved as `unet_model.h5`) to segmen
 
 ---
 
-![Nuclei Segmentation Example](assets/outputs/0114f484a16c152baa2d82fdd43740880a762c93f436c8988ac461c5c9dbe7d5_plot.png) <!-- Add the image path here -->
-
-
+![Nuclei Segmentation Example](outputs/0114f484a16c152baa2d82fdd43740880a762c93f436c8988ac461c5c9dbe7d5_plot.png)
 
 ## Dataset Summary
 
