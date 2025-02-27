@@ -184,7 +184,6 @@ Adjust the port (-P 2222) if your VM uses a different SSH port. For remote VMs, 
 
 License
 
-This project is licensed under the MIT License – see the LICENSE file for details.
 Important: The 2018 Data Science Bowl dataset is subject to Kaggle’s Terms of Use and is restricted to non-commercial and competition-related activities.
 
 Files Included
