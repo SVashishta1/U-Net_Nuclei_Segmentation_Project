@@ -16,7 +16,7 @@ else:
     print(" No GPU found. Using CPU for training. Training may be slow.")
 
 # Setting dataset path
-DATASET_PATH = "/Users/svashi/Documents/Vashishta/Projects/UPenn_Prep_Project/project_files/cell_pipeline/datasets/cell_segmantation/stage1_train"  # Update this
+DATASET_PATH = "/Users/svashi/Documents/Vashishta/Projects/med_Project/project_files/cell_pipeline/datasets/cell_segmantation/stage1_train"  # Update this
 
 print(" Dataset Path:", DATASET_PATH)
 
