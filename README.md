@@ -32,7 +32,7 @@ This project uses a pre-trained U-Net model (saved as `unet_model.h5`) to segmen
 
 ---
 
-![Nuclei Segmentation Example](outputs/0114f484a16c152baa2d82fdd43740880a762c93f436c8988ac461c5c9dbe7d5_plot.png)
+![Nuclei Segmentation Example](output/0114f484a16c152baa2d82fdd43740880a762c93f436c8988ac461c5c9dbe7d5_plot.png)
 
 ## Dataset Summary
 
@@ -196,8 +196,7 @@ Files Included
 
 Notes
 	•	Singularity on macOS: Not natively supported. Use a Linux VM or the provided Singularity image.
-	•	Dataset Size: The stage1_test directory is large (over 600 subfolders); this project processes only the first 11 images.
+	•	Dataset Size: The stage1_test directory is large (over 600 subfolders); this project processes only the first 11 images (for testing) (trained on whole training dataset).
 To process all images, modify infer_unet.py by removing the [:11] slicing.
 	•	Path Adjustments: Update file paths (e.g., /Users/svashi/...) as needed for your local environment.
 
-This README is organized to guide users through understanding the project, setting up the environment, running the model, and reproducing the results. Feel free to adjust the sections or add more details as necessary.
